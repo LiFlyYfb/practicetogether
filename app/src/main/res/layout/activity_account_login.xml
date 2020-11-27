@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginTop="@dimen/size_60"
+                android:src="@drawable/ic_launcher_background"
+                android:textSize="@dimen/sp_24" />
+
+            <EditText
+                android:id="@+id/edAccount"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50"
+                android:layout_below="@+id/img"
+                android:layout_marginStart="@dimen/size_30"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginEnd="@dimen/size_30"
+                android:background="@null"
+                android:hint="输入手机号"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/edAccount"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginEnd="@dimen/size_15"
+                android:background="@color/view_line" />
+
+            <EditText
+                android:id="@+id/edPwd"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/view_line"
+                android:layout_marginStart="@dimen/size_30"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginEnd="@dimen/size_30"
+                android:background="@null"
+                android:hint="输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:id="@+id/view_line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/edPwd"
+                android:layout_marginLeft="@dimen/size_15"
+                android:layout_marginRight="@dimen/size_15"
+                android:background="@color/view_line" />
+
+            <TextView
+                android:id="@+id/tvForgetPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_line1"
+                android:layout_marginStart="@dimen/size_30"
+                android:layout_marginTop="@dimen/size_35"
+                android:layout_marginEnd="@dimen/size_30"
+                android:text="忘记密码"
+                android:textSize="@dimen/sp_15" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50"
+                android:layout_below="@+id/tvForgetPwd"
+                android:layout_marginStart="@dimen/size_30"
+                android:layout_marginTop="@dimen/size_35"
+                android:layout_marginEnd="@dimen/size_30"
+                android:layout_marginBottom="47dp"
+                android:background="@drawable/login_btn"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/btnSmsLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnLogin"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginEnd="@dimen/size_15"
+                android:gravity="center"
+                android:text="注册"
+                android:textSize="@dimen/sp_18" />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

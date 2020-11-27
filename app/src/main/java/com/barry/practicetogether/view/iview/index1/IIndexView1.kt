@@ -1,0 +1,13 @@
+package com.barry.practicetogether.view.iview.index1
+
+import com.barry.practicetogether.model.bean.BannerBean
+import com.barry.practicetogether.model.bean.IndexBean
+import com.barry.practicetogether.view.iview.IBaseView
+
+/**
+ *Created by Barry
+ **/
+interface IIndexView1 : IBaseView {
+    fun setBanner(list: List<BannerBean>)
+    fun setClassShow(list: List<IndexBean>)
+}

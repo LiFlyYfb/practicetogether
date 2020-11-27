@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.fragmnets.index3.Index3Fragment">
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_15"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_head"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_toEndOf="@+id/iv_head"
+            android:text="田阔"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_toEndOf="@+id/iv_head"
+            android:background="@drawable/login_bg"
+            android:padding="@dimen/size_5"
+            android:text="养老学习艺术学校"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+
+        <ImageView
+            android:id="@+id/notice"
+            android:layout_width="@dimen/size_48"
+            android:layout_height="@dimen/size_48"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/dp_10"
+            android:scaleType="center"
+            android:src="@drawable/msg_icon" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/gay1" />
+
+    <RelativeLayout
+        android:id="@+id/rlMyOlder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginEnd="@dimen/size_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/set_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:text="我的收藏"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/more_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMyFriends"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginEnd="@dimen/size_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/set_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:text="联系客服"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/friendCount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/more_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlSetting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginEnd="@dimen/size_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/set_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:text="设备检测"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/more_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlVersion"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginEnd="@dimen/size_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/set_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/versionName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/more_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</LinearLayout>

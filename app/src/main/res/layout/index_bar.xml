@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/commFragmentBar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_48">
+
+    <TextView
+        android:id="@+id/commName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="田阔"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/commType"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_toEndOf="@+id/commName"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="田阔"
+        android:textColor="@color/index"
+        android:textSize="16sp" />
+
+
+    <ImageView
+        android:id="@+id/commIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:src="@drawable/msg_icon"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:text="title" />
+
+
+</RelativeLayout>
