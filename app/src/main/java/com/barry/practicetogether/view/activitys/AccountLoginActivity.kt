@@ -1,5 +1,6 @@
 package com.barry.practicetogether.view.activitys
 
+import JClickListener
 import com.barry.practicetogether.R
 import com.barry.practicetogether.presenter.login.LoginPresenter
 import com.barry.practicetogether.view.MainActivity
@@ -17,6 +18,10 @@ class AccountLoginActivity : BaseActivity<ILoginView, LoginPresenter>(), ILoginV
             MainActivity.startMainActivity(this)
 //            presenter?.login()
         }
+        btnRegister.setOnClickListener(JClickListener {
+
+            RegisterActivity.startRegisterActivity(this)
+        })
     }
 
     override fun initData() {

@@ -60,7 +60,7 @@ abstract class BaseActivity<V : IBaseView, P : BasePresenter<V>> : AppCompatActi
     }
 
     open fun getBackIcon(): Int {
-        return R.drawable.ic_launcher_background
+        return R.drawable.back_icon
     }
 
 

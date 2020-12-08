@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
+        <activity android:name=".view.activitys.index.MyTaskActivity"></activity>
+        <activity android:name=".view.activitys.ClassOlderActivity" />
+        <activity android:name=".view.activitys.RegisterActivity" />
         <activity android:name=".view.activitys.AccountLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

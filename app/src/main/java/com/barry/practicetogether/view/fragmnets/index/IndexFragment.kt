@@ -1,5 +1,6 @@
 package com.barry.practicetogether.view.fragmnets.index
 
+import JClickListener
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -8,6 +9,7 @@ import com.barry.practicetogether.model.bean.BannerBean
 import com.barry.practicetogether.model.bean.IndexBean
 import com.barry.practicetogether.presenter.index.IndexPresenter
 import com.barry.practicetogether.utlis.ZeusGlide
+import com.barry.practicetogether.view.activitys.index.MyTaskActivity
 import com.barry.practicetogether.view.adapter.IndexAdapter
 import com.barry.practicetogether.view.base.BaseFragment
 import com.barry.practicetogether.view.iview.index.IIndexView
@@ -36,6 +38,10 @@ class IndexFragment : BaseFragment<IIndexView, IndexPresenter>(), IIndexView {
         }
         indexAdapter = IndexAdapter()
         rvClass.adapter = indexAdapter
+
+        myTask.setOnClickListener(JClickListener {
+            MyTaskActivity.startMyTaskActivity(mContext)
+        })
     }
 
 

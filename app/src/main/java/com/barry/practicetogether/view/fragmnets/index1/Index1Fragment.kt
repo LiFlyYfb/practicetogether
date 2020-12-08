@@ -1,5 +1,6 @@
 package com.barry.practicetogether.view.fragmnets.index1
 
+import JClickListener
 import android.os.Bundle
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
@@ -8,6 +9,7 @@ import com.barry.practicetogether.model.bean.BannerBean
 import com.barry.practicetogether.model.bean.IndexBean
 import com.barry.practicetogether.presenter.index1.Index1Presenter
 import com.barry.practicetogether.view.MainActivity
+import com.barry.practicetogether.view.activitys.ClassOlderActivity
 import com.barry.practicetogether.view.adapter.PagerAdapter
 import com.barry.practicetogether.view.base.BaseFragment
 import com.barry.practicetogether.view.iview.index1.IIndexView1
@@ -42,9 +44,10 @@ class Index1Fragment : BaseFragment<IIndexView1, Index1Presenter>(), IIndexView1
                 }
             }
         }
-
         vpClass.registerOnPageChangeCallback(pageChangeCallback)
-
+        commNext.setOnClickListener(JClickListener {
+            ClassOlderActivity.startClassOlderActivity(mContext)
+        })
     }
 
     private val pageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
