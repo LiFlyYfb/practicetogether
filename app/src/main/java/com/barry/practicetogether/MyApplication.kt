@@ -5,12 +5,12 @@ import android.os.Bundle
 import com.barry.basehttp.BaseHttpApplication
 
 import com.barry.practicetogether.model.utils.RequestInterceptor
+import com.barry.practicetogether.model.utils.URLInterceptor
+import com.barry.practicetogether.model.utils.logd
 import com.barry.practicetogether.utlis.init
 import okhttp3.Interceptor
 
-/**
- *Created by Barry
- **/
+
 class MyApplication : BaseHttpApplication() {
     override val baseUrl: String
         get() = BuildConfig.API_URL
@@ -54,6 +54,7 @@ class MyApplication : BaseHttpApplication() {
 
         override fun onActivityDestroyed(activity: Activity) {
             if (activity != null) {
+                logd("111111111111111111111111111111111111")
                 activitys.remove(activity)
             }
         }

@@ -60,6 +60,6 @@ abstract class Jobserver<T> @JvmOverloads constructor(
     }
 
     companion object {
-        const val HTTP_OK = 0
+        const val HTTP_OK = 200
     }
 }

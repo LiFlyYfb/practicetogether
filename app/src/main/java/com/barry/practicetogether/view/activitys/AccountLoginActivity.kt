@@ -15,8 +15,8 @@ class AccountLoginActivity : BaseActivity<ILoginView, LoginPresenter>(), ILoginV
 
     override fun initViews() {
         btnLogin.setOnClickListener {
-            MainActivity.startMainActivity(this)
-//            presenter?.login()
+//            MainActivity.startMainActivity(this)
+            presenter?.logina()
         }
         btnRegister.setOnClickListener(JClickListener {
 
@@ -37,11 +37,11 @@ class AccountLoginActivity : BaseActivity<ILoginView, LoginPresenter>(), ILoginV
     }
 
     override fun userId(): String {
-        return "zs011123"
+        return edAccount.text.toString().trim()
     }
 
     override fun pwd(): String {
-        return "123456789"
+        return edPwd.text.toString().trim()
     }
 
     override fun success() {

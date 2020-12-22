@@ -2,9 +2,11 @@ package com.barry.practicetogether.model
 
 import com.barry.basehttp.BaseHttp
 import com.barry.practicetogether.model.bean.Account
+import com.barry.practicetogether.model.bean.LoginRest
 import com.barry.practicetogether.model.bean.Result
+import com.barry.practicetogether.model.bean.UserBean
 import com.barry.practicetogether.model.services.AccountService
-import com.barry.practicetogether.model.utils.ZeusException
+import com.barry.practicetogether.model.utils.TokenException
 import com.barry.practicetogether.model.utils.ioMain
 import com.barry.practicetogether.model.utils.logd
 import com.barry.practicetogether.utlis.*
@@ -13,9 +15,10 @@ import io.reactivex.Observable
 val accountService = BaseHttp.instance.buildService(AccountService::class.java)
 
 //保存数据
-fun saveAccount(account: Account) {
-    put("accountId", toBase64(account.userId))
-    put("token", toBase64(account.token))
+fun saveAccount(account: LoginRest) {
+    put("accountId", toBase64(account.phone))
+//    put("token", toBase64(account.token))
+    put("token", account.token)
     putObject("account", account)
 }
 
@@ -26,7 +29,8 @@ fun getAccountId(): String {
 }
 
 fun getToken(): String {
-    val token = fromBase64(getString("token", ""))
+//    val token = fromBase64(getString("token", ""))
+    val token = getString("token", "")
     logd(token)
     return token
 }
@@ -54,7 +58,7 @@ fun emailRegister(
 
     if (email.isEmpty()) {
         return Observable.create {
-            it.onNext(Result(ZeusException.EMAIL_EMPTY.code, ZeusException.EMAIL_EMPTY.message))
+            it.onNext(Result(TokenException.EMAIL_EMPTY.code, TokenException.EMAIL_EMPTY.message))
         }
     }
     return accountService.accountRegister(
@@ -78,8 +82,8 @@ fun accountLogin(loginName: String, pwd: String): Observable<Result<Account>> {
         return Observable.create {
             it.onNext(
                 Result(
-                    ZeusException.LOGINNAME_EMPTY.code,
-                    ZeusException.LOGINNAME_EMPTY.message
+                    TokenException.LOGIN_NAME_EMPTY.code,
+                    TokenException.LOGIN_NAME_EMPTY.message
                 )
             )
         }
@@ -87,6 +91,29 @@ fun accountLogin(loginName: String, pwd: String): Observable<Result<Account>> {
     return accountService.accountLogin(loginName, toBase64(pwd)).compose(ioMain())
 }
 
+fun accountLogina(userBean: UserBean): Observable<Result<LoginRest>> {
+    if (userBean.username.isEmpty()) {
+        return Observable.create {
+            it.onNext(
+                Result(
+                    TokenException.LOGIN_NAME_EMPTY.code,
+                    TokenException.LOGIN_NAME_EMPTY.message
+                )
+            )
+        }
+    }
+    if (userBean.password.isEmpty()) {
+        return Observable.create {
+            it.onNext(
+                Result(
+                    TokenException.LOGIN_PWD_EMPTY.code,
+                    TokenException.LOGIN_PWD_EMPTY.message
+                )
+            )
+        }
+    }
+    return accountService.rLogin(userBean).compose(ioMain())
+}
 
 
 

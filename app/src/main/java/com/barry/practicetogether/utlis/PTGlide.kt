@@ -7,7 +7,7 @@ import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
 
 @GlideModule
-class ZeusGlide : AppGlideModule() {
+class PTGlide : AppGlideModule() {
     companion object {
         fun load(context: Context, imageView: ImageView, url: String) {
             Glide.with(context)

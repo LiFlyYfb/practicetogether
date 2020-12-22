@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 /**
  *Created by Barry
  **/
-@Suppress("NAME_SHADOWING")
+@Suppress("NAME_SHADOWING", "DEPRECATION")
 class MyTaskAdapter : BaseQuickAdapter<MyTask, BaseViewHolder>(R.layout.item_my_task) {
     private val maxLine = 1
     private var eliString: SpannableString? = null

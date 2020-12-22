@@ -13,34 +13,34 @@ import javax.net.ssl.SSLHandshakeException
 class JException(var code: Int, override var message: String) : Exception() {
 
     companion object {
-        fun handleException(exception: Throwable): ZeusException {
+        fun handleException(exception: Throwable): TokenException {
             return when (exception) {
                 is HttpException -> {
-                    ZeusException.HTTP_ERROR
+                    TokenException.HTTP_ERROR
                 }
 
                 is SocketTimeoutException,
                 is ConnectTimeoutException -> {
-                    ZeusException.TIME_OUT
+                    TokenException.TIME_OUT
                 }
 
                 is ConnectException,
                 is UnknownHostException -> {
-                    ZeusException.CONNECT_ERROR
+                    TokenException.CONNECT_ERROR
                 }
 
                 is SSLHandshakeException -> {
-                    ZeusException.SSL_ERROR
+                    TokenException.SSL_ERROR
                 }
 
                 is JsonParseException,
                 is JSONException,
                 is ParseException -> {
-                    ZeusException.JSON_ERROR
+                    TokenException.JSON_ERROR
                 }
 
                 else -> {
-                    ZeusException.UNKNOW
+                    TokenException.UNKNOW
                 }
             }
         }
@@ -48,7 +48,7 @@ class JException(var code: Int, override var message: String) : Exception() {
 
 }
 
-enum class ZeusException(var code: Int, var message: String) {
+enum class TokenException(var code: Int, var message: String) {
     UNKNOW(-1000, "未知错误"),
     HTTP_ERROR(-11, "服务器异常"),
     TIME_OUT(-12, "服务器连接超时，请重试"),
@@ -56,5 +56,6 @@ enum class ZeusException(var code: Int, var message: String) {
     SSL_ERROR(-14, "证书异常"),
     JSON_ERROR(-15, "数据异常"),
     EMAIL_EMPTY(-16, "数据异常"),
-    LOGINNAME_EMPTY(-17, "数据异常"),
+    LOGIN_NAME_EMPTY(-18, "用户名为空"),
+    LOGIN_PWD_EMPTY(-19, "密码为空"),
 }

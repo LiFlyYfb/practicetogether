@@ -1,22 +1,14 @@
 package com.barry.practicetogether.model.services
 
 import com.barry.practicetogether.model.bean.Account
+import com.barry.practicetogether.model.bean.LoginRest
+import com.barry.practicetogether.model.bean.UserBean
 import io.reactivex.Observable
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
 import com.barry.practicetogether.model.bean.Result
+import retrofit2.http.*
 
 interface AccountService {
 
-    @FormUrlEncoded
-    @POST("shop/user/sendMessage")
-    fun sendSms(
-        @Field("phone") phone: String,
-        @Field("vaptchaToken") token: String,
-        @Field("type") type: Int = 0,
-        @Field("reg_time") reg_time: Long = System.currentTimeMillis()
-    ): Observable<Result<Any>>
 
     @FormUrlEncoded
     @POST("shop/user/register")
@@ -31,9 +23,9 @@ interface AccountService {
 
 
     @FormUrlEncoded
-    @POST("shop/user/login")
+    @POST("yiqilian/stu/login")
     fun accountLogin(
-        @Field("loginName") loginName: String,
+        @Field("username") loginName: String,
         @Field("password") password: String
     ): Observable<Result<Account>>
 
@@ -53,12 +45,12 @@ interface AccountService {
         @Field("loginName") loginName: String
     ): Observable<Result<Any>>
 
+    @POST("yiqilian/stu/login")
+    fun rLogin(@Body userBean: UserBean): Observable<Result<LoginRest>>
+
 
     @POST("shop/user/logout")
-    fun logout(): Observable<Result<Any>>
-
-
-
+    fun logout(): Observable<Result<String>>
 
 
 }

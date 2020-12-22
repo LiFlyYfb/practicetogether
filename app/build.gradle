@@ -15,7 +15,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,7 +29,7 @@ android {
     productFlavors {
         dev {
             dimension "api_url"
-            buildConfigField "String", "API_URL", "\"http://47.92.122.59:31901/api/\""
+            buildConfigField "String", "API_URL", "\"http://47.100.207.252:8080/\""
 
         }
         prod {

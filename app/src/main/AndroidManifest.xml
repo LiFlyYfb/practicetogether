@@ -3,19 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.barry.practicetogether">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo1"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".view.activitys.index.MyTaskActivity"></activity>
+        <activity
+            android:name=".view.activitys.index.NewTestActivity"
+            android:launchMode="singleTop"></activity>
+        <activity android:name=".view.activitys.index.TeachClassDetailActivity" />
+        <activity android:name=".view.activitys.index.TeachClassActivity" />
+        <activity android:name=".view.activitys.index3.RecordSoundActivity" />
+        <activity android:name=".view.activitys.index.MyTaskActivity" />
         <activity android:name=".view.activitys.ClassOlderActivity" />
         <activity android:name=".view.activitys.RegisterActivity" />
         <activity android:name=".view.activitys.AccountLoginActivity">

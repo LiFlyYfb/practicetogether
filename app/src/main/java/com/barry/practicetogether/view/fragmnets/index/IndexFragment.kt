@@ -8,8 +8,9 @@ import com.barry.practicetogether.R
 import com.barry.practicetogether.model.bean.BannerBean
 import com.barry.practicetogether.model.bean.IndexBean
 import com.barry.practicetogether.presenter.index.IndexPresenter
-import com.barry.practicetogether.utlis.ZeusGlide
+import com.barry.practicetogether.utlis.PTGlide
 import com.barry.practicetogether.view.activitys.index.MyTaskActivity
+import com.barry.practicetogether.view.activitys.index.TeachClassActivity
 import com.barry.practicetogether.view.adapter.IndexAdapter
 import com.barry.practicetogether.view.base.BaseFragment
 import com.barry.practicetogether.view.iview.index.IIndexView
@@ -32,15 +33,18 @@ class IndexFragment : BaseFragment<IIndexView, IndexPresenter>(), IIndexView {
     override fun initView(view: View, savedInstanceState: Bundle?) {
         xBanner.loadImage { _, model, view, _ ->
             model as BannerBean
-            ZeusGlide.loadCenterCrop(mContext, view as ImageView, model.banne)
+            PTGlide.loadCenterCrop(mContext, view as ImageView, model.banne)
         }
-        xBanner.setOnItemClickListener { banner, model, view, position ->
+        xBanner.setOnItemClickListener { _, _, _, _ ->
         }
         indexAdapter = IndexAdapter()
         rvClass.adapter = indexAdapter
 
         myTask.setOnClickListener(JClickListener {
             MyTaskActivity.startMyTaskActivity(mContext)
+        })
+        teachClass.setOnClickListener(JClickListener {
+            TeachClassActivity.startTeachClassActivity(mContext)
         })
     }
 
